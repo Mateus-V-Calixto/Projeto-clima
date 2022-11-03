@@ -63,6 +63,10 @@ body{
     cursor: pointer;
 }
 
+#busca:hover{
+    background-color: #6598b3;
+}
+
 /*CLima*/
 
 .dados-weather{
@@ -117,5 +121,14 @@ body{
     margin: .6rem;
     padding: .6rem;
 }
+
+#descricao{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+
 
 
