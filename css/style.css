@@ -129,6 +129,18 @@ body{
     text-align: center;
 }
 
+.naoEncontrada {
+    font-size: 1.2em;
+
+    margin-top: 20px;
+    padding-top: 20px;
+
+    border-top: 1px solid white;
+
+    line-height: 1.5em;
+    color: #fdfdfd;
+}
+
 
 
 

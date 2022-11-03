@@ -12,6 +12,10 @@ const weathericonElement = document.querySelector("#weather-icon");
 const paisdIconElement = document.querySelector("#pais");
 const umidadeElement = document.querySelector("#umidade span");
 const windElement = document.querySelector("#wind span");
+
+const dadosWeatherElement = document.querySelector("#dados-weather");
+const divNaoEncontradaElement = document.querySelector("#naoEncontrada")
+
 //Funcoes
 
 const buscarDadosWeather = async(city)=> {
@@ -26,7 +30,7 @@ const buscarDadosWeather = async(city)=> {
 const mostraDadosWeather = async (city) =>{
     const data = await buscarDadosWeather(city);
     
-    this.atualizarDados(data)
+    this.verificarDados(data)
 } 
 
 //Event
@@ -40,6 +44,8 @@ buscaBtn.addEventListener("click", (e) => {
 });
 
 function atualizarDados(data) {
+    dadosWeatherElement.classList.remove('hide')
+    divNaoEncontradaElement.classList.add('hide')
     
     cityElement.innerHTML = data.name;
     tempElement.innerHTML = parseInt(data.main.temp);
@@ -52,3 +58,25 @@ function atualizarDados(data) {
     cityInput.value = "";
     
 }
+
+function verificarDados(dados){
+
+    if (dados.cod == 404 || dados.cod == 400) {
+        divNaoEncontradaElement.classList.remove("hide")
+        dadosWeatherElement.classList.add('hide')
+        
+    }else{
+
+        this.atualizarDados(dados)
+    }
+    
+
+}
+
+cityInput.addEventListener("keyup", (e)=> {
+    if(e.code === "Enter"){
+        const city = e.target.value;
+
+        mostraDadosWeather(city)
+    }
+})

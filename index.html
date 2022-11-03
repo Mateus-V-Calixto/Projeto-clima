@@ -23,31 +23,35 @@
             </div>
         </div>
 
-        <div class="dados-weather">
+        <div id="dados-weather" class="dados-weather hide">
             <h2>
                 <i class="fa-solid fa-location-dot"></i>
-                <span id="city">Maceió</span>
-                <img src="https://countryflagsapi.com/png/br" alt="Bandeira do pais" id="pais">
+                <span id="city"></span>
+                <img src="" alt="Bandeira do pais" id="pais">
             </h2>
 
-            <p id="temperatura"><span>38</span>&deg;C</p>
+            <p id="temperatura"><span></span>&deg;C</p>
             <div class="descricao-container">
-                <p id="descricao">Nublado</p>
-                <img src="http://openweathermap.org/img/wn/01d.png" alt="Condicoes do tempo" id="weather-icon">    
+                <p id="descricao"></p>
+                <img src="" alt="Condicoes do tempo" id="weather-icon">    
             </div>
 
             <div class="detalhes-container">
                 <p id="umidade">
                     <i class="fa-solid fa-droplet"></i>
-                    <span>48%</span>
+                    <span></span>
                 </p>
                 <p id="wind">
                     <i class="fa-solid fa-wind"></i>
-                    <span>3km/h</span>
+                    <span></span>
                 </p>
             </div>
         </div>
 
+        <div id="naoEncontrada" class="naoEncontrada hide">
+            <p>Essa cidade não foi encontrada</p>
+            <p>Tente novamente</p>
+        </div>
     </div>
 </body>
 </html>
